@@ -44,6 +44,7 @@ function draw() {
   background(180);
   
   if(keyDown("space")) {
+    jumpSound.play();
     trex.velocityY = -10;
   }
   
@@ -59,6 +60,11 @@ function draw() {
   drawSprites();
 }
 
+function reset(){
+gameState = PLAY;
+  gameOver.visible=false;
+  restar.visible=false;
+}
 function spawnClouds() {
   //write code here to spawn the clouds
   if (frameCount % 60 === 0) {
